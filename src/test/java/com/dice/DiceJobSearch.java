@@ -1,5 +1,6 @@
 package com.dice;
 
+import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -23,7 +24,7 @@ public class DiceJobSearch {
 		driver.get(url);
 		
 		String actualTitle = driver.getTitle();
-		String expectedTitle= "Job search for Technology Professionals | Dice.com";
+		String expectedTitle= "Job Search for Technology Professionals | Dice.com";
 		if(actualTitle.equals(expectedTitle)) {
 			System.out.println("Step PASS. Dice homepage loaded");
 		}else {
@@ -49,6 +50,7 @@ public class DiceJobSearch {
 			System.out.println("Step FAIL: Keyword :"+ keyword + "search returned "+ countResult+ "results in "+location);
 		}
 		driver.close();
+		System.out.println("Test COMPLETED--:"+LocalDateTime.now());
 	}
 
 }
